@@ -34,7 +34,7 @@ class MinecraftBedrockQueryTypeSchema implements QueryTypeSchemaInterface
                 ->connectTimeout(2)
                 ->timeout(5)
                 ->get("http://{$ip}:{$port}/v1/join");
-            
+
             if (!$response->successful()) {
                 return null;
             }
@@ -87,6 +87,7 @@ class MinecraftBedrockQueryTypeSchema implements QueryTypeSchemaInterface
             ];
         } catch (Exception $exception) {
             report($exception);
+
             return null;
         }
     }
